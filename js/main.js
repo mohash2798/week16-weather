@@ -1,6 +1,6 @@
   let city=[]
   async function getWeather(Find){
-      var res = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=d74bc15762b946bca73194337262501&q=${Find}&days=3`)
+      var res = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=d74bc15762b946bca73194337262501&q=${Find}&days=3`)
       var data =await res.json()
       
     city= data 
