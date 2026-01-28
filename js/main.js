@@ -2,21 +2,18 @@
   async function getWeather(Find){
       var res = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=d74bc15762b946bca73194337262501&q=${Find}&days=3`)
       var data =await res.json()
-         if (data.error) {
-        console.log("Error:", data.error.message)
-        return
-    }
+      
     city= data 
     console.log(city);
     display()
   }
   getWeather("alexandria")
   document.querySelector("#inputSearch").addEventListener("input",function(e){
-    if(document.querySelector("#inputSearch").innerHTML!=" "){
-      getWeather(e.target.value)
-    }else{
-      getWeather("alexandria")
-    }
+if (e.target.value.trim() !== "") {
+    getWeather(e.target.value)
+} else {
+    getWeather("alexandria")
+}
   })
 
   function display(){
